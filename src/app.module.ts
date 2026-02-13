@@ -3,6 +3,8 @@ import { Module } from '@nestjs/common';
 import { UsersModule } from './users/users.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerModule } from 'nestjs-pino';
+import { Prisma } from 'generated/prisma';
+import { PrismaModule } from 'prisma/prisma.module';
 
 @Module({
   imports: [
@@ -31,6 +33,7 @@ import { LoggerModule } from 'nestjs-pino';
         };
       },
     }),
+    PrismaModule,
 
     UsersModule,
   ],
